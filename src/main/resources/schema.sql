@@ -1,5 +1,1 @@
-CREATE TABLE products (
-                          id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                          name VARCHAR(255) NOT NULL,
-                          description VARCHAR(500)
-);
+CREATE SCHEMA IF NOT EXISTS mydatabase;

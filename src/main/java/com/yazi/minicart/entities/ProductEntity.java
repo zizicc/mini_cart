@@ -11,10 +11,10 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-generate IDs
     private long id;
 
-    @Column(nullable = false) // Name is required
+    @Column(name = "product_name", nullable = false) // Name is required
     private String name;
 
-    @Column(length = 500) // Optional: Limit description size
+    @Column(name = "product_description",length = 500) // Optional: Limit description size
     private String description;
 
     public ProductEntity(long id, String name, String description) {
