@@ -11,9 +11,11 @@
 - Set up Liquibase
 - Connect with MySQL via Docker
 
-### TODO
-- Lombok
+## Features Dec 17, 2024
 - Authentication and Authorization(JWT)
+- Lombok issue
+
+### TODO
 - Spring Profile
 - Use @Value
 - Add @Builder/Slf4j annotation from lombok

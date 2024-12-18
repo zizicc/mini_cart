@@ -1,4 +1,4 @@
-package com.yazi.minicart.dto;
+package com.yazi.minicart.service;
 
 import com.yazi.minicart.entities.UserEntity;
 import org.springframework.security.core.GrantedAuthority;

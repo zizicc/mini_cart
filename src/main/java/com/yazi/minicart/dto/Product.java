@@ -1,7 +1,15 @@
 package com.yazi.minicart.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Product {
 
     @JsonProperty("id")
@@ -12,27 +20,6 @@ public class Product {
 
     @JsonProperty("description")
     private String description;
-
-    public Product(Long id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
-
-    public Product() {
-    }
-
-    public Long getId() {
-        return this.id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
 
     @JsonProperty("id")
     public void setId(Long id) {
@@ -47,9 +34,5 @@ public class Product {
     @JsonProperty("description")
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String toString() {
-        return "Product(id=" + this.getId() + ", name=" + this.getName() + ", description=" + this.getDescription() + ")";
     }
 }

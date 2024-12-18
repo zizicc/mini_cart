@@ -4,11 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class UserEntity {
 
     @Id
@@ -26,45 +28,4 @@ public class UserEntity {
 
     @Column(name="roles")
     private String roles;
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setRoles(String roles) {
-        this.roles = roles;
-    }
-
-    public int getId() {
-        return this.id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public String getRoles() {
-        return this.roles;
-    }
 }

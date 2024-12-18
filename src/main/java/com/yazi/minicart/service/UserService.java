@@ -1,6 +1,5 @@
 package com.yazi.minicart.service;
 
-import com.yazi.minicart.dto.User;
 import com.yazi.minicart.entities.UserEntity;
 import com.yazi.minicart.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

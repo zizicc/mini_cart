@@ -2,9 +2,17 @@ package com.yazi.minicart.entities;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
-@Table(name = "products") // Optional: Specify the table name if it's different from the entity name
+@Table(name = "products")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class ProductEntity {
 
     @Id
@@ -17,40 +25,5 @@ public class ProductEntity {
     @Column(name = "product_description",length = 500) // Optional: Limit description size
     private String description;
 
-    public ProductEntity(long id, String name, String description) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-    }
 
-    public ProductEntity() {
-    }
-
-    public long getId() {
-        return this.id;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String toString() {
-        return "ProductEntity(id=" + this.getId() + ", name=" + this.getName() + ", description=" + this.getDescription() + ")";
-    }
 }
