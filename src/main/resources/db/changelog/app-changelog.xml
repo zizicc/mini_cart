@@ -6,7 +6,9 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <!-- Changes to include -->
-    <include file="/db/changelog/changes/app_init.sql"/>
+    <include file="/db/changelog/changes/product_init.sql"/>
     <include file="/db/changelog/changes/app_product_insert.sql"/>
+    <include file="/db/changelog/changes/user_init.sql"/>
+    <include file="/db/changelog/changes/app_user_insert.sql"/>
 
 </databaseChangeLog>
