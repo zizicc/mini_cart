@@ -9,22 +9,22 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserInfo {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="user_name")
+    @Column(name="name")
     private String name;
 
-    @Column(name="user_email")
+    @Column(name="email")
     private String email;
 
-    @Column(name="user_password")
+    @Column(name="password")
     private String password;
 
-    @Column(name="user_roles")
+    @Column(name="roles")
     private String roles;
 
     public void setId(int id) {

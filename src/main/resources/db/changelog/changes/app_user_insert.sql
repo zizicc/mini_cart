@@ -1,1 +1,1 @@
-insert into users values(1,"zi","zi@mail.com", "123", "user");
+insert into users values(1,"zi","zi@mail.com", "$2a$10$BbkyvEQP2LTsBXoQ2PeJmOSDgxczO/xZowC3s9ZmQdGUjgvbiMl.a", "Role_USER");
