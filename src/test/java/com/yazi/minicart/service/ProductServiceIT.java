@@ -4,7 +4,6 @@ import com.yazi.minicart.MiniCartApplication;
 import com.yazi.minicart.dto.Product;
 import com.yazi.minicart.entities.ProductEntity;
 import com.yazi.minicart.service.ProductService;
-import jakarta.annotation.Resource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +17,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @ContextConfiguration(classes = MiniCartApplication.class)
-public class ProductServiceTest {
+public class ProductServiceIT {
 
     @Autowired
     private ProductService productService;
