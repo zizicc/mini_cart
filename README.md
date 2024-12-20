@@ -19,27 +19,30 @@
 - Spring Profile 
 - Use @Value
 - Add @Builder/Slf4j annotation from lombok
+- Log Levels (INFO, DEBUG etc)
 
-
-### TODO
-- Add RestResponseStatus, error codes
+### Features Dec 19, 2024
+- Add RestResponseStatus, error codes [Later]
 - Add @ControllerAdvice
-- Add @ExtendWith(SpringExtension.class) for integration test
 - Add @ExtendWith(MockitoExtension.class)
-- Add @ComponentScan
+
+### Features Dec 20, 2024
+- Swagger
+- Learn how to use RestTemplate (not spring boot library) + @Configuration
 - Use Java Stream API
+- Git Commands(stash, cherrypick, squash, rebase)
+- Code Lint
+
+### Just Read the details
+- Add @ExtendWith(SpringExtension.class) for integration test
+- Add @ComponentScan
 - Add @RequestHeader
 - Add @Valid in dto validation
 - Use @Transactional API
 - Use @Cacheable, @CacheEvict API
 - Use @Query in repository
 
+
 ### TODO Next
-- Log Levels (INFO, DEBUG etc)
-- Swagger
-- Actuator endpoint with Memory Usage etc.
-- Code Lint
-- Git Commands(stash, cherrypick, squash, rebase)
 - Angular
 - AWS (Cognito, EC2, Loadbalancer, ECS)
-- Learn how to use RestTemplate + @Configuration
