@@ -11,18 +11,21 @@
 - Set up Liquibase
 - Connect with MySQL via Docker
 
-## Features Dec 17, 2024
+### Features Dec 17, 2024
 - Authentication and Authorization(JWT)
 - Lombok issue
 
-### TODO
-- Spring Profile
+### Features Dec 18, 2024
+- Spring Profile 
 - Use @Value
 - Add @Builder/Slf4j annotation from lombok
+
+
+### TODO
 - Add RestResponseStatus, error codes
 - Add @ControllerAdvice
-- Add @Runwith(SpringRunner.class) for integration test
-- Add @Runwith(MockitoJUnitRunner.class)
+- Add @ExtendWith(SpringExtension.class) for integration test
+- Add @ExtendWith(MockitoExtension.class)
 - Add @ComponentScan
 - Use Java Stream API
 - Add @RequestHeader
@@ -31,7 +34,7 @@
 - Use @Cacheable, @CacheEvict API
 - Use @Query in repository
 
-## TODO Next
+### TODO Next
 - Log Levels (INFO, DEBUG etc)
 - Swagger
 - Actuator endpoint with Memory Usage etc.

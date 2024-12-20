@@ -23,11 +23,14 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public ProductEntity getProductById(Long id) {
+    public ProductEntity getProductById(long id) {
         return productRepository.findById(id).orElse(null);
     }
 
     public ProductEntity addProduct(Product product) {
+        if (product == null) {
+            throw new IllegalArgumentException("Product cannot be null");
+        }
         ProductEntity newProduct = new ProductEntity();
         newProduct.setName(product.getName());
         newProduct.setDescription(product.getDescription());

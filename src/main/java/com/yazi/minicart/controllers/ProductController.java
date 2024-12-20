@@ -2,8 +2,10 @@ package com.yazi.minicart.controllers;
 
 import com.yazi.minicart.dto.Product;
 import com.yazi.minicart.entities.ProductEntity;
+import com.yazi.minicart.exceptions.InvalidRequestException;
 import com.yazi.minicart.exceptions.ProductNotFoundException;
 import com.yazi.minicart.service.ProductService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Slf4j
 @RestController // Marks this class as a RESTful controller
 @RequestMapping("/products") // Base URL for all endpoints in this controller
 public class ProductController {
@@ -31,6 +34,7 @@ public class ProductController {
             ProductEntity product = productService.getProductById(id);
             return ResponseEntity.ok(product);
         } catch (ProductNotFoundException e) {
+            log.error("Product with ID {} not found: {}", id, e.getMessage());
             return ResponseEntity.notFound().build(); // 返回 404
         }
     }
@@ -38,6 +42,9 @@ public class ProductController {
     // Add a new product
     @PostMapping("")
     public ResponseEntity<ProductEntity> addProduct(@RequestBody Product product) {
+        if (product == null) {
+            throw new InvalidRequestException("Invalid product request", "INVALID_PRODUCT_REQUEST");
+        }
         System.out.println(product.toString());
         ProductEntity createdProductEntity = productService.addProduct(product);
         return ResponseEntity.ok(createdProductEntity); // Return 200 with the created product

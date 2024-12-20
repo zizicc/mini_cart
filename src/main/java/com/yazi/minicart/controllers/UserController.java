@@ -4,7 +4,9 @@ import com.yazi.minicart.dto.AuthRequest;
 import com.yazi.minicart.entities.UserEntity;
 import com.yazi.minicart.service.JwtService;
 import com.yazi.minicart.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,9 +14,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/auth")
 public class UserController {
+
+    @Value("${my.website.name}")
+    private String myWebsiteName;
 
     @Autowired
     private UserService service;
@@ -25,13 +31,16 @@ public class UserController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Value("${my.website.name}")
     @GetMapping("/welcome")
     public String welcome() {
-        return "Welcome this endpoint is not secure";
+        log.info("Welcome");
+        return "Welcome to " + myWebsiteName;
     }
 
     @PostMapping("/addNewUser")
     public String addNewUser(@RequestBody UserEntity userInfo) {
+        log.warn("addUser with name: {}", userInfo.getName());
         return service.addUser(userInfo);
     }
 
